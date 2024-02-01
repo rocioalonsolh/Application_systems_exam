@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define the character set and viewport for the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the HTML document -->
     <title>Book List</title>
 </head>
 <body>
+    <!-- Heading for the book list -->
     <h1>Book List</h1>
 
+    <!-- Unordered list to display the list of books -->
     <ul>
+        <!-- Loop through each book in the 'books' list -->
         {% for book in books %}
+            <!-- List item for each book, displaying title, author, and publication year -->
             <li>{{ book.title }} by {{ book.author }} ({{ book.publication_year }})</li>
         {% endfor %}
     </ul>
 
+    <!-- Link to navigate to the 'add_book' route for adding a new book -->
     <a href="{{ url_for('add_book') }}">Add a new book</a>
 </body>
 </html>

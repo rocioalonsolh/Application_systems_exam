@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define the character set and viewport for the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the HTML document -->
     <title>Add a New Book</title>
 </head>
 <body>
+    <!-- Heading for the add book form -->
     <h1>Add a New Book</h1>
 
+    <!-- Form for adding a new book with a POST request to the 'add_book' route -->
     <form method="POST" action="{{ url_for('add_book') }}">
+        <!-- Input field for the book title -->
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required><br>
 
+        <!-- Input field for the book author -->
         <label for="author">Author:</label>
         <input type="text" id="author" name="author" required><br>
 
+        <!-- Input field for the book publication year -->
         <label for="publication_year">Publication Year:</label>
         <input type="number" id="publication_year" name="publication_year" required><br>
 
+        <!-- Button to submit the form and add a new book -->
         <button type="submit">Add Book</button>
     </form>
 
+    <!-- Link to navigate back to the book list using the 'books' route -->
     <a href="{{ url_for('books') }}">Back to Book List</a>
 </body>
 </html>
